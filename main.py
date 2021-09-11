@@ -154,7 +154,7 @@ def main():
     
 
     all_pred['nn_pred'] = np.array(NN.predict(Xvalid))
-    all_pred['single_lstm_pred'] = np.array(single_lstm_pred)
+   
     # all_pred['svm_linear_pred'] = np.array(svm_linear.predict(Xvalid))
     # all_pred['svm_poly_pred'] = np.array(svm_poly.predict(Xvalid))
     # all_pred['svm_rbf_pred'] = np.array(svm_rbf.predict(Xvalid))
@@ -169,7 +169,6 @@ def main():
         print('Accuracy Score of', key)
         print(eval.accuracy(prediction = pred, true_class = Yvalid))
         print('AUC Score of', key)
-        print(roc_auc_score(np.array(Yvalid), np.array(pred)))
         print('F1 Score of', key)
         print(eval.f1score(prediction = pred, true_class = Yvalid))
         print('recall_score', key)
